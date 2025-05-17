@@ -49,5 +49,16 @@ jobs:
         minikube status
         kubectl get nodes
 
+    - name: Adding bitnami repo and running postgres database from bitnami
+      run: |
+        helm repo add bitnami https://charts.bitnami.com/bitnami 
+        helm repo update
+
+        helm install my-postgres bitnami/postgresql \ --set auth.username=cruduser \ --set auth.password=password \ --set auth.database=cruddb
+
+        sleep 10
+        #checking whether ethe pod is running or not
+        kubectl get pods
+
     
 
