@@ -47,7 +47,7 @@ jobs:
     - name: Check minikube status
       run: |
         minikube status
-        kubectl get nodes - o wide
+        kubectl get nodes -o wide
 
     - name: Adding bitnami repo and running postgres database from bitnami
       run: |
