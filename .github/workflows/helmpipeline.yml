@@ -37,7 +37,7 @@ jobs:
 
     - name: Start minikube
       run: |
-        sudo minikube start
+        minikube start
 
     - name: Run minikube tunnel in background
       run: |
