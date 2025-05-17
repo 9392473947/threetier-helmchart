@@ -56,9 +56,13 @@ jobs:
 
         helm install my-postgres bitnami/postgresql  --set auth.username=cruduser  --set auth.password=password  --set auth.database=cruddb
 
-        sleep 10
+        sleep 15
         #checking whether ethe pod is running or not
         kubectl get pods
+
+    - name: installing backend
+      run: |
+        helm install backendapp backendhelm
 
     
 
