@@ -47,7 +47,7 @@ jobs:
     - name: Check minikube status
       run: |
         minikube status
-        kubectl get nodes
+        kubectl get nodes - o wide
 
     - name: Adding bitnami repo and running postgres database from bitnami
       run: |
@@ -63,6 +63,18 @@ jobs:
     - name: installing backend
       run: |
         helm install backendapp backendhelm
+
+    - name: installing frontend
+      run: |
+        helm install frontendapp frontendhelm
+
+    - name: wait for 50 sec for running state of pods
+      run: |
+        sleep 50
+        kubectl get pods
+        kubectl get svc
+
+    
 
     
 
