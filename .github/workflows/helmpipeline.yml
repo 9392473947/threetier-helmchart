@@ -54,7 +54,7 @@ jobs:
         helm repo add bitnami https://charts.bitnami.com/bitnami 
         helm repo update
 
-        helm install my-postgres bitnami/postgresql \ --set auth.username=cruduser \ --set auth.password=password \ --set auth.database=cruddb
+        helm install my-postgres bitnami/postgresql  --set auth.username=cruduser  --set auth.password=password  --set auth.database=cruddb
 
         sleep 10
         #checking whether ethe pod is running or not
